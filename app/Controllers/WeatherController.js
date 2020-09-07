@@ -5,9 +5,12 @@ import weatherService from "../Services/WeatherService.js";
 //		you may wish to check out the model and include some additional data.
 
 //TODO Complete rendering data to the screen
+
+
 function drawWeather() {
+  let temp = ProxyState.weather
   let templates = ''
-  ProxyState.weather.forEach(t => templates += t.WeatherTemplate)
+  ProxyState.weather.forEach(w => templates += w.WeatherTemplate)
   document.getElementById('draw-weather').innerHTML = templates
 }
 export default class WeatherController {

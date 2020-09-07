@@ -6,9 +6,11 @@ import { ProxyState } from "../AppState.js";
 //      (you may wish to set it as a background image: https://www.w3schools.com/JSREF/prop_style_backgroundimage.asp)
 
 function _drawImg() {
-  let img = ProxyState.image
+  let img = ProxyState.img
   document.getElementById("bg-img").style.backgroundImage = `url(${img})`
+  document.getElementById("bg-img").innerHTML = ``
 }
+
 export default class ImageController {
   constructor() {
     this.getImg()
