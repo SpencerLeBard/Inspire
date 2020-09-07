@@ -10,5 +10,18 @@ export default class Weather {
 
     this.city = data.name
     this.kelvin = data.main.temp
+
+
+  }
+  get WeatherTemplate() {
+    return `            
+    <div class="col-4">
+      <div class="card">
+      <div class="card-body">
+              <h4 class="card-title"> Weather </h4>
+              <p class="card-text">${this.kelvin}</p>
+          <div class="card-body">
+      </div>
+    </div>`
   }
 }

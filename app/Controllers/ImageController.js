@@ -7,13 +7,12 @@ import { ProxyState } from "../AppState.js";
 
 function _drawImg() {
   let img = ProxyState.image
-  console.log(img);
   document.getElementById("bg-img").style.backgroundImage = `url(${img})`
 }
 export default class ImageController {
   constructor() {
     this.getImg()
-    ProxyState.on("images", _drawImg)
+    ProxyState.on("image", _drawImg)
   }
 
   getImg() {
