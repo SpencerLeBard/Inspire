@@ -3,6 +3,7 @@ import Weather from "./Models/Weather.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 // import Quote from ".Models/Quote.js"
+// import Image from "./Models/Images.js"
 
 // TODO you will want to add all your other data to the AppState
 class AppState extends EventEmitter {
