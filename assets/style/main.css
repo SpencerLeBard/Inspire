@@ -42,6 +42,12 @@
   box-sizing: border-box;
 }
 
+#bg-img{
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  }
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
