@@ -9,8 +9,8 @@ class ImageService {
   }
 
   async getImg() {
-    let res = await api.get('images')
-    ProxyState.img = res.url
+    let res = await api.get('https://bcw-sandbox.herokuapp.com/api/images') //"Images" instead??
+    ProxyState.img = res.data.url
   }
 
 }
