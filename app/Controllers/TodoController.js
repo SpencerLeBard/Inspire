@@ -5,7 +5,7 @@ import { ProxyState } from "../AppState.js";
 function _drawTodos() {
   let template = ''
   let todos = ProxyState.todos
-  todos.forEach(t => template += t.TodoTemplate)
+  todos.forEach(d => template += d.TodoTemplate)
   document.getElementById('draw-todo').innerHTML = template
   _getNumber();
 }
@@ -17,8 +17,7 @@ function _getNumber() {
     let todos = todo[i];
     if (todos.completed == true) {
       number--
-    }
-    if (number >= 1) {
+    } if (number >= 1) {
       document.getElementById('check-number').innerHTML = `${number}`
     } else if (number == 0) {
       document.getElementById('check-number').innerHTML = `done`
@@ -42,11 +41,16 @@ export default class TodoController {
   }
   addTodo(e) {
     e.preventDefault();
-    var form = e.target;
-    //TODO build the todo object from the data that comes into this method
-    var todo = {};
+    let form = e.target;
+    let todos = {
+      description: form.description.value,
+      completed: false,
+      user: true,
+      id: "",
+    };
+
     try {
-      todoService.addTodo(todo);
+      todoService.addTodo(todos);
     } catch (error) {
       console.error(error)
     }

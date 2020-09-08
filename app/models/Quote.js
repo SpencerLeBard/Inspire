@@ -10,7 +10,7 @@ export default class Quote {
     <div class="col-4">
       <div class="card">
           <div class="card-body">
-              <h4 class="card-title">${this.author}
+              <h4 class="card-title">${this.author}</h4>
               <p class="card-text">${this.quote}</p>
           </div>
       </div>

@@ -3,19 +3,19 @@ import { api } from "../Services/AxiosService.js";
 import Todo from "../Models/Todo.js";
 
 
-let url = 'spencer/todos/'
+let url = 'spencer/todos/' //NOTE
 
 
 class TodoService {
   async getTodos() {
-    let res = await api.get('url');
+    let res = await api.get(url); //NOTE
     ProxyState.todos = res.data.data.map(t => new Todo(t))
   }
 
   async addTodo(todos) {
-    let res = await api.post(url, todos);
+    let res = await api.post(url, todos)
     ProxyState.todos = [...ProxyState.todos, new Todo(res.data.data)]
-    document.getElementById("todo-form").reset()
+    document.getElementById("draw-todos").reset()
   }
 
   async toggleTodoStatus(todosid) {
@@ -26,10 +26,10 @@ class TodoService {
       todos.completed = true;
     }
     ProxyState.todos = ProxyState.todos
-    let res = api.put(`${url}${todosid}`, todos);
+    let status = api.put(`${url}${todosid}`, todos);
   }
   async removeTodo(todosid) {
-    let res = api.delete(`${url}${todosid}`)
+    let del = api.delete(`${url}${todosid}`)
     ProxyState.todos = ProxyState.todos.filter(d => d.id !== todosid)
   }
 }
