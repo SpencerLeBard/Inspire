@@ -8,7 +8,7 @@ let url = 'spencer/todos/' //NOTE
 
 class TodoService {
   async getTodos() {
-    let res = await api.get(url); //NOTE
+    let res = await api.get(url); //NOTE url
     ProxyState.todos = res.data.data.map(t => new Todo(t))
   }
 

@@ -22,9 +22,24 @@
                 <div class="col 6" id="draw-quote"></div>
             </div>
             <div class="row">
-                <div class="col 6" id="clock">clock</div>
-                <div class="col 6" id="draw-todo"> Todo List</div>
+                <div class="col-4 card p-3 m-3 todo-template">
+                    <h5 class="card-header">TO DO LIST <i class="fa fa-trash
+                    align-self-end" onclick="app.TodoController.removeTodo('${this.id}')"></i></h5>
+                    <div class="card-body">
+                    </div>
+                    <form class="form-inline d-flex flex-direction-row"
+                        onsubmit="app.TodoController.addTodo(event, '${this.description}')">
+                        <div class="form-group">
+                            <label for=""></label>
+                            <input type="text" name="type" id="type" class="form-control" aria-describedby="helpId">
+                            <button type="submit">Add Todo</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-8"></div>
             </div>
+            <div class="row">
+                <div class="col-12 text-center" id="clock">clock</div>
         </main>
         <footer class="container-fluid bg-dark text-light">
             <div class="row text-center">

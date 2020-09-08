@@ -5,8 +5,8 @@ import { ProxyState } from "../AppState.js";
 function _drawTodos() {
   let template = ''
   let todos = ProxyState.todos
-  todos.forEach(d => template += d.TodoTemplate)
-  document.getElementById('draw-todo').innerHTML = template
+  todos.forEach(td => template += td.TodoTemplate)
+  document.getElementById('todos').innerHTML = template
   _getNumber();
 }
 
@@ -45,8 +45,8 @@ export default class TodoController {
     let todos = {
       description: form.description.value,
       completed: false,
-      user: true,
-      id: "",
+      user: "",
+      _id: "",
     };
 
     try {

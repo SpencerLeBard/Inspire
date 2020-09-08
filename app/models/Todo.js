@@ -9,8 +9,8 @@ export default class Todo {
 
   get TodoTemplate() {
     return `
-    <div class="card p-3 m-3 todotemplate">
-    <h5 class="card-header">${this.user}<i class="fa fa-trash
+    <div class="card p-3 m-3 todo-template">
+    <h5 class="card-header">${this.user} TO DO LIST <i class="fa fa-trash
     align-self-end" onclick="app.TodoController.removeTodo('${this.id}')"></i></h5>
     <div class="card-body">
     </div>
