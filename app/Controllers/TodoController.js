@@ -4,7 +4,7 @@ import { ProxyState } from "../AppState.js";
 
 function _drawTodos() {
   let templates = ProxyState.todos.TodoTemplate
-  document.getElementById('draw-todos').innerHTML = templates
+  document.getElementById('draw-todo').innerHTML = templates
 }
 
 export default class TodoController {

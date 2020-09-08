@@ -10,7 +10,7 @@ class TodoService {
   async getTodos() {
     let res = await api.get('spencer/todos');
     console.log(res);
-    ProxyState.todo = new Todo(res.data);
+    ProxyState.todos = new Todo(res.data); // NOTE MAP
   }
 
   async addTodo(todo) {
