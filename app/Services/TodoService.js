@@ -3,12 +3,12 @@ import { api } from "../Services/AxiosService.js";
 import Todo from "../Models/Todo.js";
 
 
-let url = 'spencer/todos/' //NOTE
+let url = 'spencer/todos/' //NOTE url in quotes
 
 
 class TodoService {
   async getTodos() {
-    let res = await api.get(url); //NOTE url
+    let res = await api.get(url); //NOTE url quotes
     ProxyState.todos = res.data.data.map(t => new Todo(t))
   }
 
@@ -29,7 +29,7 @@ class TodoService {
     let status = api.put(`${url}${todosid}`, todos);
   }
   async removeTodo(todosid) {
-    let del = api.delete(`${url}${todosid}`)
+    let del = api.delete(url + todosid)
     ProxyState.todos = ProxyState.todos.filter(d => d.id !== todosid)
   }
 }

@@ -6,7 +6,7 @@ function _drawTodos() {
   let template = ''
   let todos = ProxyState.todos
   todos.forEach(td => template += td.TodoTemplate)
-  document.getElementById('todos').innerHTML = template
+  document.getElementById('todo-template').innerHTML = template
   _getNumber();
 }
 
@@ -17,7 +17,7 @@ function _getNumber() {
     let todos = todo[i];
     if (todos.completed == true) {
       number--
-    } if (number >= 1) {
+    } if (number <= 1) {
       document.getElementById('check-number').innerHTML = `${number}`
     } else if (number == 0) {
       document.getElementById('check-number').innerHTML = `done`
@@ -30,6 +30,8 @@ export default class TodoController {
     ProxyState.on("todos", _drawTodos);
     this.getTodos()
     todoService.getTodos();
+    ProxyState.on("todos", _getNumber);
+
   }
 
   getTodos() {
@@ -39,11 +41,11 @@ export default class TodoController {
       console.error(error)
     }
   }
-  addTodo(e) {
-    e.preventDefault();
-    let form = e.target;
+  addTodo(event) {
+    event.preventDefault();
+    let form = event.target;
     let todos = {
-      description: form.description.value,
+      description: form.todobody.value,
       completed: false,
       user: "",
       _id: "",
