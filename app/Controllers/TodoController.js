@@ -3,8 +3,27 @@ import { ProxyState } from "../AppState.js";
 
 
 function _drawTodos() {
-  let templates = ProxyState.todos.TodoTemplate
-  document.getElementById('draw-todo').innerHTML = templates
+  let template = ''
+  let todos = ProxyState.todos
+  todos.forEach(t => template += t.TodoTemplate)
+  document.getElementById('draw-todo').innerHTML = template
+  _getNumber();
+}
+
+function _getNumber() {
+  let todo = ProxyState.todos
+  let number = todo.length
+  for (let i = 0; i < todo.length; i++) {
+    let todos = todo[i];
+    if (todos.completed == true) {
+      number--
+    }
+    if (number >= 1) {
+      document.getElementById('check-number').innerHTML = `${number}`
+    } else if (number == 0) {
+      document.getElementById('check-number').innerHTML = `done`
+    }
+  }
 }
 
 export default class TodoController {

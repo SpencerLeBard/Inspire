@@ -1,9 +1,8 @@
 export default class Todo {
-  constructor({ id, _id, user, todo, description }) {
-    this.id = id
-    this._id = _id
+  constructor({ id, _id, user, completed, description }) {
+    this.id = id || _id;
     this.user = user
-    this.todo = todo
+    this.completed = completed
     this.description = description
   }
 
