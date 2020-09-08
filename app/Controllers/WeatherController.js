@@ -8,9 +8,7 @@ import weatherService from "../Services/WeatherService.js";
 
 
 function drawWeather() {
-  let temp = ProxyState.weather
-  let templates = ''
-  ProxyState.weather.forEach(w => templates += w.WeatherTemplate)
+  let templates = ProxyState.weather.WeatherTemplate
   document.getElementById('draw-weather').innerHTML = templates
 }
 export default class WeatherController {
