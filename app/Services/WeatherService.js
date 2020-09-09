@@ -10,11 +10,11 @@ class WeatherService {
 
 
   async changeTemp(temp) {
-    let temperature = ProxyState.weather
+    let weather = ProxyState.weather
     if (temp) {
-      temperature.isfar = false
+      weather.isfar = false
     } else {
-      temperature.isfar = true
+      weather.isfar = true
     }
     ProxyState.weather = ProxyState.weather //reset the thing
   }

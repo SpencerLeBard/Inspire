@@ -1,5 +1,5 @@
 function conCell(kelvin) {
-  let cell = kelvin - 273.15;
+  let cell = (kelvin - 273.15);
   return cell.toFixed()
 }
 function conFar(kelvin) {
@@ -18,25 +18,25 @@ export default class Weather {
     this.far = conFar(this.kelvin)
     this.cell = conCell(this.kelvin)
     this.isfar = true;
+    this.iscell = false;
 
 
   }
   get WeatherTemplate() {
     if (this.isfar) {
-
       return `            
       <div class="col-4" role="button">
       <div onclick="app.weatherController.changeTemp('${this.isfar}')">
       <div class="card">
           <div class="card-body">
           <h4 class="card-title"> Weather </h4>
-              <p class="card-text">${this.far}</p>
+              <h6 class="card-text">${this.far}</h6>
           <div class="card-body">
           </div>
         </div>`
     } else {
       return `<div class="col-4" role="button">
-      <div onclick="app.weatherController.changeTemp('${this.isfar}')">
+      <div onclick="app.weatherController.changeTemp(${this.isfar})">
       <div class="card">
           <div class="card-body">
                   <h4 class="card-title"> Weather </h4>

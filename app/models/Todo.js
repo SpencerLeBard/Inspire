@@ -10,7 +10,7 @@ export default class Todo {
   get TodoTemplate() {
     return `
     <div class="card p-3 m-3 todo-template">
-    <h5 class="card-header">${this.user} ${this.description} <input type="checkbox" id="test" /> <label for="test">Test</label>
+    <h5 class="card-header">${this.user} ${this.description} <input type="checkbox" id="test" /> <label for="test"></label>
     <i class="fa fa-trash
     align-self-end" onclick="app.todoController.removeTodo('${this.id}')"></i></h5>
     <div class="card-body">

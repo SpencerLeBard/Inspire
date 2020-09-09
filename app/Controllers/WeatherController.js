@@ -26,7 +26,7 @@ export default class WeatherController {
     } catch (error) {
       console.error(error);
     }
-
+    drawWeather()
   }
 }
 
