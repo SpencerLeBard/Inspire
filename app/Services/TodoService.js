@@ -19,7 +19,6 @@ class TodoService {
   }
 
   async toggleTodoStatus(todosid) {
-    ProxyState.todos = ProxyState.todos
     let status = api.put(`${url}${todosid}`);
   }
   async removeTodo(todosid) {
