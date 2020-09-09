@@ -32,6 +32,7 @@ class TodoService {
     let del = api.delete(url + todosid)
     ProxyState.todos = ProxyState.todos.filter(d => d.id !== todosid)
   }
+
 }
 
 const todoService = new TodoService();

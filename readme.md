@@ -100,9 +100,9 @@ The todos portion of this project is the largest and will probably take the most
 ## REQUIREMENTS:
  ### Visualization
 - The data from the services are each rendered:
-  DO [ ] Quote: Quote always displayed and Author *reveals on hover* (.hover)
+  X [ ] Quote: Quote always displayed and Author *reveals on hover* (.hover)
   * [ ] Image: The image is required, however the additional data is optional
-  DO [ ] Weather: The temp is displayed in Fahrenheit/Celsius with a click toggling between
+  X [ ] Weather: The temp is displayed in Fahrenheit/Celsius with a click toggling between
   * [ ] Todo: Todo's are shown on the page including *a count of remaining tasks to complete*
 - * [ ] The image should be on large display with at least one other element positioned over the top of the image.
 - * [ ] When adding a Todo the page does not reload
@@ -112,7 +112,7 @@ The todos portion of this project is the largest and will probably take the most
  ### Functionality
   * [ ] Todo's can be added to a list (POST)
   * [ ] Todo's can be removed (DELETE)
-  X [ ] Todo's can be marked complete (PUT)
+  * [ ] Todo's can be marked complete (PUT)
   * [ ] The data in the Todos persists on reload
 
 ### EXTENSION IDEAS 

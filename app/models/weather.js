@@ -1,22 +1,49 @@
+function conCell(kelvin) {
+  let cell = kelvin - 273.15;
+  return cell.toFixed()
+}
+function conFar(kelvin) {
+  let far = ((kelvin - 273.15) * 1.8) + 32;
+  return far.toFixed()
+}
+
+
+
+
+
 export default class Weather {
   constructor(data) {
-    //TODO You should convert the temperature data to either F or C
-    //      check out the other data that comes back and see if there is anything you want to try
-
     this.city = data.name
     this.kelvin = data.main.temp
+    this.far = conFar(this.kelvin)
+    this.cell = conCell(this.kelvin)
+    this.isfar = true;
 
 
   }
   get WeatherTemplate() {
-    return `            
-    <div class="col-4">
+    if (this.isfar) {
+
+      return `            
+      <div class="col-4" role="button">
+      <div onclick="app.weatherController.changeTemp('${this.isfar}')">
       <div class="card">
-      <div class="card-body">
-              <h4 class="card-title"> Weather </h4>
-              <p class="card-text">${this.kelvin}</p>
           <div class="card-body">
-      </div>
-    </div>`
+          <h4 class="card-title"> Weather </h4>
+              <p class="card-text">${this.far}</p>
+          <div class="card-body">
+          </div>
+        </div>`
+    } else {
+      return `<div class="col-4" role="button">
+      <div onclick="app.weatherController.changeTemp('${this.isfar}')">
+      <div class="card">
+          <div class="card-body">
+                  <h4 class="card-title"> Weather </h4>
+              <p class="card-text">${this.cell}</p>
+          <div class="card-body">
+          </div>
+        </div>`
+    }
   }
 }

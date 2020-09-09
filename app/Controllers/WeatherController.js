@@ -1,11 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import weatherService from "../Services/WeatherService.js";
 
-//NOTE The weather service and controller are mostly done,
-//		you may wish to check out the model and include some additional data.
-
-//TODO Complete rendering data to the screen
-
 
 function drawWeather() {
   let templates = ProxyState.weather.WeatherTemplate
@@ -25,4 +20,13 @@ export default class WeatherController {
       console.error(e)
     }
   }
+  changeTemp(temp) {
+    try {
+      weatherService.changeTemp(temp)
+    } catch (error) {
+      console.error(error);
+    }
+
+  }
 }
+

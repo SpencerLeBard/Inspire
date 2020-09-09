@@ -17,7 +17,7 @@ function _getNumber() {
     let todos = todo[i];
     if (todos.completed == true) {
       number--
-    } if (number <= 1) {
+    } if (number >= 1) {
       document.getElementById('check-number').innerHTML = `${number}`
     } else if (number == 0) {
       document.getElementById('check-number').innerHTML = `done`

@@ -18,28 +18,13 @@
         </header>
         <main class="container-fluid bg-light" id="bg-img">
             <div class="row img">
+
                 <div class="col 6" id="draw-weather"></div>
                 <div class="col 6" id="draw-quote"></div>
             </div>
             <div class="row">
-                <div class="col-4 card p-3 m-3 todo-template">
-                    <h5 class="card-header" id="check-number">TO DO LIST <i class="fa fa-trash
-                    align-self-end" onclick="app.todoController.removeTodo('${this.id}')"></i></h5>
-                    <div class="card-body" id="todo-template">
-                    </div>
-                    <form class="form-inline d-flex flex-direction-row"
-                        onsubmit="app.todoController.addTodo(event, '${this.description}')">
-                        <div class="form-group">
-                            <input type="text" name="type" id="todobody" class="form-control" aria-describedby="helpId">
-                            <button type="submit">Add Todo</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-8"></div>
-            </div>
-            <div class="row">
                 <h1></h1>
-                <div class="col-12 text-center" id="clock"> clock</h1>
+                <div class="col-12 text-center card" id="clock"> clock</h1>
                     <script>
 
                         var clock = document.getElementById('clock');
@@ -56,6 +41,22 @@
                         time();
                     </script>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-4 card p-3 m-3 todo-template">
+                    <h5 class="card-header" id="check-number"> <i class="fa fa-trash
+                    align-self-end" onclick="app.todoController.removeTodo('${this.id}')"></i></h5>
+                    <div class="card-body" id="todo-template">
+                    </div>
+                    <form class="form-inline d-flex flex-direction-row"
+                        onsubmit="app.todoController.addTodo(event, '${this.description}')">
+                        <div class="form-group">
+                            <input type="text" name="type" id="todobody" class="form-control" aria-describedby="helpId">
+                            <button type="submit">Add Todo</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-8"></div>
             </div>
         </main>
         <footer class="container-fluid bg-dark text-light">
