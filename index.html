@@ -38,7 +38,25 @@
                 <div class="col-8"></div>
             </div>
             <div class="row">
-                <div class="col-12 text-center" id="clock">clock</div>
+                <h1></h1>
+                <div class="col-12 text-center" id="clock"> clock</h1>
+                    <script>
+
+                        var clock = document.getElementById('clock');
+
+                        function time() {
+                            var d = new Date();
+                            var s = d.getSeconds();
+                            var m = d.getMinutes();
+                            var h = d.getHours();
+                            clock.textContent = h + ":" + m + ":" + s;
+                        }
+
+                        setInterval(time, 1000);
+                        time();
+                    </script>
+                </div>
+            </div>
         </main>
         <footer class="container-fluid bg-dark text-light">
             <div class="row text-center">
