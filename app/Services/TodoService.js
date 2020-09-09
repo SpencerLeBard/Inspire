@@ -19,14 +19,8 @@ class TodoService {
   }
 
   async toggleTodoStatus(todosid) {
-    let todos = ProxyState.todos.find(todos => todos.id == todosid);
-    if (todos.completed) {
-      todos.completed = false;
-    } else {
-      todos.completed = true;
-    }
     ProxyState.todos = ProxyState.todos
-    let status = api.put(`${url}${todosid}`, todos);
+    let status = api.put(`${url}${todosid}`);
   }
   async removeTodo(todosid) {
     let del = api.delete(url + todosid)

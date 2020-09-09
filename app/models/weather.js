@@ -1,9 +1,17 @@
+//NOTE must convert above export 
+
+
+
 function conCell(kelvin) {
   let cell = (kelvin - 273.15);
   return cell.toFixed()
 }
+
+
+
+
 function conFar(kelvin) {
-  let far = ((kelvin - 273.15) * 1.8) + 32;
+  let far = (((kelvin - 273.15) * 1.8) + 32);
   return far.toFixed()
 }
 
@@ -24,25 +32,30 @@ export default class Weather {
   }
   get WeatherTemplate() {
     if (this.isfar) {
-      return `            
+      return `
       <div class="col-4" role="button">
+      <div class ="weathertemplatestyle"            
       <div onclick="app.weatherController.changeTemp('${this.isfar}')">
       <div class="card">
           <div class="card-body">
-          <h4 class="card-title"> Weather </h4>
-              <h6 class="card-text">${this.far}</h6>
+          <h4 class="card-title"> Weather In Boise </h4>
+              <h6 class="card-text">Fahrenheit:${this.far}</h6>
           <div class="card-body">
           </div>
-        </div>`
+        </div>
+        <div>`
     } else {
-      return `<div class="col-4" role="button">
+      return `
+      <div class="col-4" role="button">
+      <div class ="weathertemplatestyle"
       <div onclick="app.weatherController.changeTemp(${this.isfar})">
       <div class="card">
           <div class="card-body">
-                  <h4 class="card-title"> Weather </h4>
-              <p class="card-text">${this.cell}</p>
+                  <h4 class="card-title"> Weather In Boise </h4>
+              <p class="card-text">Celsius${this.cell}</p>
           <div class="card-body">
           </div>
+        </div>
         </div>`
     }
   }

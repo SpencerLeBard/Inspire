@@ -10,10 +10,13 @@ export default class Quote {
     <div class="col-4">
       <div class="card">
           <div class="card-body">
-              <h4 class="card-title">${this.author}</h4>
               <p class="card-text">${this.quote}</p>
+              <div style="width: 100px; height: 100px; background-color: white;" 
+                  onmouseover="document.getElementById('div1').style.display = 'block';">
+             <div id="div1" style="display: none;">${this.author}</div>
+          </div>
           </div>
       </div>
-    </div>`
+      </div>`
   }
 }
