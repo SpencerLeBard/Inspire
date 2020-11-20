@@ -15,7 +15,7 @@ class TodoService {
   async addTodo(todos) {
     let res = await api.post(url, todos)
     ProxyState.todos = [...ProxyState.todos, new Todo(res.data.data)]
-    document.getElementById("draw-todos").reset()
+    document.getElementById("draw-todos")
   }
 
   async toggleTodoStatus(todosid) {
