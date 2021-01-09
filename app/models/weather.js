@@ -11,7 +11,6 @@ function conFar(kelvin) {
 }
 
 
-
 export default class Weather {
   constructor(data) {
     this.city = data.name
@@ -20,9 +19,8 @@ export default class Weather {
     this.cell = conCell(this.kelvin)
     this.isfar = true;
     this.iscell = false;
-
-
   }
+
   get WeatherTemplate() {
     if (this.isfar) {
       return `
