@@ -1,7 +1,3 @@
-//NOTE must convert above export 
-
-
-
 function conCell(kelvin) {
   let cell = (kelvin - 273.15);
   return cell.toFixed()
@@ -9,13 +5,10 @@ function conCell(kelvin) {
 
 
 
-
 function conFar(kelvin) {
   let far = (((kelvin - 273.15) * 1.8) + 32);
   return far.toFixed()
 }
-
-
 
 
 
